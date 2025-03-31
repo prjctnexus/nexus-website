@@ -101,18 +101,18 @@ export default function HeaderElement() {
             </PopoverPanel>
           </Popover>
 
-          <a href="/under_construction" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/under_construction/" className="text-sm/6 font-semibold text-gray-900">
             Features
           </a>
-          <a href="/under_construction" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/under_construction/" className="text-sm/6 font-semibold text-gray-900">
             Marketplace
           </a>
-          <Link href="/company" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="/company/" className="text-sm/6 font-semibold text-gray-900">
             Company
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/under_construction" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/under_construction/" className="text-sm/6 font-semibold text-gray-900">
             Log In <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -160,19 +160,19 @@ export default function HeaderElement() {
                   </DisclosurePanel>
                 </Disclosure>
                 <a
-                  href="/under_construction"
+                  href="/under_construction/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Features
                 </a>
                 <a
-                  href="/under_construction"
+                  href="/under_construction/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
                 </a>
                 <Link
-                  href="/company"
+                  href="/company/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Company
@@ -180,7 +180,7 @@ export default function HeaderElement() {
               </div>
               <div className="py-6">
                 <a
-                  href="/under_construction"
+                  href="/under_construction/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log In

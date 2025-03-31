@@ -20,7 +20,7 @@ export default function PageUnderConstruction() {
               >
                 Go Back Home
               </Link>
-              <a href="/contact" className="text-sm font-semibold text-gray-900">
+              <a href="/contact/" className="text-sm font-semibold text-gray-900">
                 Contact Support <span aria-hidden="true">&rarr;</span>
               </a>
             </div>

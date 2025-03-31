@@ -34,9 +34,9 @@ const features = [
 ]
 
 const links = [
-    { name: 'Get In Touch', href: '/contact' },
+    { name: 'Get In Touch', href: '/contact/' },
     { name: 'Our Core Values', href: '#' },
-    { name: 'Meet The Team', href: '/leadership' },
+    { name: 'Meet The Team', href: '/leadership/' },
 ]
 
 const stats = [  
