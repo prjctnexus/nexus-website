@@ -1,15 +1,17 @@
+import HeaderElement from "@/components/HeaderElement";
 import Link from "next/link";
 
-export default function PageNotFound() {
+export default function PageUnderConstruction() {
     return (
-        <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
-          <div className="text-center">
-            <p className="text-base font-semibold text-indigo-600">Error 404</p>
+        <>
+        <HeaderElement />
+        <div className="text-center mt-24">
+            <p className="text-base font-semibold text-indigo-600">Project Nexus</p>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-              Page Not Found
+              Page Under Construction
             </h1>
             <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-              Sorry, We Could Not Find The Page You Are Looking For
+              Sorry, This Page Is Currently Under Construction
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
@@ -23,6 +25,6 @@ export default function PageNotFound() {
               </a>
             </div>
           </div>
-        </main>
+        </>
     )
-}  
+}

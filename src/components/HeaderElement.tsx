@@ -25,11 +25,11 @@ const products = [
   { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '#', icon: ChartPieIcon },
 ]
 const callsToAction = [
-  { name: 'GitHub Profile', href: 'https://github.com/prjctnexus', icon: CodeBracketIcon },
+  { name: 'On GitHub', href: 'https://github.com/prjctnexus', icon: CodeBracketIcon },
   { name: 'Contact Sales', href: 'mailto:gauthamkrishnav@icloud.com', icon: EnvelopeIcon },
 ]
 
-export default function Example() {
+export default function HeaderElement() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -101,18 +101,18 @@ export default function Example() {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/under_construction" className="text-sm/6 font-semibold text-gray-900">
             Features
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/under_construction" className="text-sm/6 font-semibold text-gray-900">
             Marketplace
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="/company" className="text-sm/6 font-semibold text-gray-900">
             Company
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <a href="/under_construction" className="text-sm/6 font-semibold text-gray-900">
             Log In <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -160,27 +160,27 @@ export default function Example() {
                   </DisclosurePanel>
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/under_construction"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Features
                 </a>
                 <a
-                  href="#"
+                  href="/under_construction"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/company"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Company
-                </a>
+                </Link>
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="/under_construction"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log In
