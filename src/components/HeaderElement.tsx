@@ -18,6 +18,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, EnvelopeIcon, CodeBracketIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const products = [
   { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '#', icon: ChartPieIcon },
@@ -34,15 +36,15 @@ export default function Example() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Project Nexus</span>
-            <img
+            <Image
               alt="Project Nexus Logo"
               src="/Favicon.svg"
               className={`${mobileMenuOpen ? "hidden" : ""}`}
               height={48} width={48}
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -119,14 +121,14 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Project Nexus</span>
-              <img
+              <Image
                 alt="Project Nexus Logo"
                 src="/Favicon.svg"
                 height={48} width={48}
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}

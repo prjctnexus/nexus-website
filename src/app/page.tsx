@@ -19,7 +19,7 @@ export default function HomePage() {
                 <GlobeAmericasIcon className="size-6 hover:text-indigo-800" title="Universality"/>
                 <LockClosedIcon className="size-6 hover:text-red-800" title="Security And Privacy" />
                 <WrenchScrewdriverIcon className="size-6 hover:text-blue-800" title="Customizability"/>
-                <UserGroupIcon className="size-6 hover:text-yellow-500" title="Inclusion And Diversity"/>
+                <UserGroupIcon className="size-6 hover:text-fuchsia-600" title="Inclusion And Diversity"/>
             </div>
         </main>
         </>
