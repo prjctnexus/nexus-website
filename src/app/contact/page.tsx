@@ -3,6 +3,12 @@
 import HeaderElement from "@/components/HeaderElement";
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
 
+const stats = [
+    { id: 1, name: '+91 9778103191', value: 'Phone' },
+    { id: 2, name: 'prjctnxs@gmail.com', value: 'Email' },
+    { id: 3, name: 'prjctnexus', value: 'Github' },
+]
+
 export default function ContactPage() {
     return (
         <>
@@ -29,7 +35,7 @@ export default function ContactPage() {
                     <button
                         className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                         onClick={() => {
-                            window.location.href = `mailto:gauthamkrishnav@icloud.com?subject=${
+                            window.location.href = `mailto:prjctnxs@gmail.com?subject=${
                                 (document.getElementById("subject") as HTMLInputElement).value || "Contacting The Nexus Support Team"
                             }`
                         }}
@@ -59,6 +65,18 @@ export default function ContactPage() {
                     </div>
                 </dl>
             </div>
+        </div>
+        <div className="mx-auto max-w-7xl py-12 sm:py-24 lg:px-8">
+            <dl className="grid max-[420px]:grid-cols-1 max-[639px]:grid-cols-2 gap-x-8 gap-y-8 text-center grid-cols-3">
+                {stats.map((stat) => (
+                  <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4">
+                      <dt className="text-base/7 text-gray-600">{stat.name}</dt>
+                      <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                          {stat.value}
+                      </dd>
+                  </div>
+                ))}
+            </dl>
         </div>
         </>
     )

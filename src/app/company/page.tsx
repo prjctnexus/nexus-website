@@ -50,7 +50,7 @@ export default function CompanyPage() {
     return (
         <>
         <HeaderElement />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 sm:mt-6 lg:mt-8">
             <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-600">Welcome To Project Nexus</h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
@@ -86,14 +86,14 @@ export default function CompanyPage() {
             </p>
             </div>
             <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold sm:grid-cols-2 md:flex lg:gap-x-10">
+            <div className="grid max-[420px]:grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold grid-cols-2 md:flex lg:gap-x-10">
                 {links.map((link) => (
                 <a key={link.name} href={link.href}>
                     {link.name} <span aria-hidden="true">&rarr;</span>
                 </a>
                 ))}
             </div>
-            <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+            <dl className="mt-16 grid max-[420px]:grid-cols-1 gap-8 sm:mt-20 grid-cols-2 lg:grid-cols-4">
                 {stats.map((stat) => (
                 <div key={stat.name} className="flex flex-col-reverse gap-1">
                     <dt className="text-base/7 text-gray-600">{stat.name}</dt>
