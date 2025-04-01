@@ -1,5 +1,10 @@
 import HeaderElement from "@/components/HeaderElement";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata =  {
+    title: "Project Nexus | Leadership"
+} satisfies Metadata;
 
 const people = [
     {

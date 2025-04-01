@@ -22,7 +22,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const products = [
-  { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '#', icon: ChartPieIcon },
+  { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '/under_construction/', icon: ChartPieIcon },
 ]
 const callsToAction = [
   { name: 'On GitHub', href: 'https://github.com/prjctnexus/', icon: CodeBracketIcon },

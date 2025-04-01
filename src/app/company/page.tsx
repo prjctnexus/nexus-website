@@ -5,6 +5,11 @@ import {
     WrenchScrewdriverIcon,
     UserGroupIcon
 } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Project Nexus | Company"
+} satisfies Metadata;
 
 const features = [
     {

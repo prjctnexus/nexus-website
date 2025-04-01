@@ -1,5 +1,10 @@
 import HeaderElement from "@/components/HeaderElement";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Project Nexus | Page Under Construction"
+} satisfies Metadata;
 
 export default function PageUnderConstruction() {
     return (

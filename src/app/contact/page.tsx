@@ -2,6 +2,7 @@
 
 import HeaderElement from "@/components/HeaderElement";
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import { useEffect } from "react";
 
 const stats = [
     { id: 1, name: '+91 9778103191', value: 'Phone' },
@@ -10,6 +11,13 @@ const stats = [
 ]
 
 export default function ContactPage() {
+    useEffect(() => {
+        if (document.readyState === "complete") {
+            setTimeout(() => {
+                document.title = "Project Nexus | Contact"
+            }, 150)
+        }
+    }, [])
     return (
         <>
         <HeaderElement />
