@@ -95,8 +95,8 @@ export default function NexusForLearning() {
                 </div>
             </div>
             <Image
-                alt="Product screenshot"
-                src="/Nexus Learning.png"
+                alt="Nexus Learning Background"
+                src="https://raw.githubusercontent.com/prjctnexus/nexus-website/e30b1d45a6d1ea084f2eaf5c0e5f2d2067ea02b0/public/Nexus%20Learning.png"
                 width={2432}
                 height={1442}
                 className="w-[48rem] max-w-none rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
