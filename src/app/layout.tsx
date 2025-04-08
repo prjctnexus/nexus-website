@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         type: "website", title: "Project Nexus",
         description: "Nexus, or Next-Gen Experiences Using Systems, Is an Open-Source Initiative Focused on Delivering Secure and Scalable Tech Solutions for the Future",
         images: [{
-            url: "/OpenGraph Image.png",
+            url: "https://raw.githubusercontent.com/prjctnexus/nexus-website/refs/heads/main/public/OpenGraph%20Image.png",
             width: 1200, height: 630,
             alt: "Project Nexus Open-Source Tech Solutions"
         }]
@@ -39,15 +39,15 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Project Nexus",
         description: "Nexus, or Next-Gen Experiences Using Systems, Is an Open-Source Initiative Focused on Delivering Secure and Scalable Tech Solutions for the Future",
-        images: ["/OpenGraph Image.png"]
+        images: ["https://raw.githubusercontent.com/prjctnexus/nexus-website/refs/heads/main/public/OpenGraph%20Image.png"]
     },
     metadataBase: new URL("https://projectnxus.web.app/"),
     authors: [{
-            name: "Nexus Team", url: "https://projectnxus.web.app/"
-        }, {
-            name: "Gautham Krishna Vinayachandran",
-            url: "https://github.com/myselfgautham"
-        }
+        name: "Nexus Team", url: "https://projectnxus.web.app/"
+    }, {
+        name: "Gautham Krishna Vinayachandran",
+        url: "https://github.com/myselfgautham"
+    }
     ]
 } satisfies Metadata;
 
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </head>
-            <body className="w-screen h-screen">{ children }</body>
+            <body className="w-screen h-screen dark:bg-[#121212]">{children}</body>
         </html>
     )
 }
