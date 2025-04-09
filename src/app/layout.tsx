@@ -9,8 +9,8 @@ interface RootLayoutProps {
 export const metadata: Metadata = {
   title: "Project Nexus",
   icons: {
-    icon: "/FaviconTeal.svg",
-    apple: "/AppleTouchIcon.png"
+    icon: "https://raw.githubusercontent.com/prjctnexus/nexus-website/6fa21e9d80ad8e14b7a656a3658129d3c78749ea/public/FaviconTeal.svg",
+    apple: "https://raw.githubusercontent.com/prjctnexus/nexus-website/refs/heads/main/public/AppleTouchIcon.png"
   },
   description: "Nexus, or Next-Gen Experiences Using Systems, Is an Open-Source Initiative Focused on Delivering Secure and Scalable Tech Solutions for the Future",
   keywords: [
