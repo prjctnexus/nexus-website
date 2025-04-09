@@ -6,7 +6,7 @@ const people = [
     name: 'Gautham Krishna Vinayachandran',
     role: 'The Creator',
     imageUrl:
-      '/leadership-assets/164372549.jpg',
+      'https://raw.githubusercontent.com/prjctnexus/nexus-website/refs/heads/main/public/leadership-assets/164372549.jpg',
   }
 ]
 
