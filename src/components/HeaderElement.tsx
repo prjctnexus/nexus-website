@@ -51,7 +51,7 @@ export default function HeaderElement() {
             <span className="sr-only">Project Nexus</span>
             <Image
               alt="Project Nexus Logo"
-              src={isDarkMode ? "/FaviconWhite.svg" : "/Favicon.svg"}
+              src={isDarkMode ? "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/FaviconWhite.svg" : "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/Favicon.svg"}
               className={`${mobileMenuOpen ? "hidden" : ""}`}
               height={48} width={48}
             />
@@ -85,7 +85,7 @@ export default function HeaderElement() {
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50 dark:hover:bg-gray-700"
                   >
                     <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900 group-hover:bg-white dark:group-hover:bg-gray-800">
-                      <item.icon aria-hidden="true" className="size-6 text-gray-600 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-teal-600" />
+                      <item.icon aria-hidden="true" className="size-6 text-gray-600 dark:text-gray-400 group-hover:text-teal-600" />
                     </div>
                     <div className="flex-auto">
                       <a href={item.href} className="block font-semibold text-gray-900 dark:text-gray-200">
@@ -123,13 +123,13 @@ export default function HeaderElement() {
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-[#121212] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Project Nexus</span>
               <Image
                 alt="Project Nexus Logo"
-                src={isDarkMode ? "/FaviconWhite.svg" : "/Favicon.svg"}
+                src={isDarkMode ? "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/FaviconWhite.svg" : "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/Favicon.svg"}
                 height={48} width={48}
               />
             </Link>
