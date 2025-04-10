@@ -1,19 +1,32 @@
 "use client";
 
-import HeaderElement from "../../../components/HeaderElement";
+import HeaderElement from "../../../../../components/HeaderElement";
 import { useEffect, useState } from "react";
-import { Article } from "../../../types/Article";
-import ArticlesRenderer from "../../../components/ArticlesRenderer";
-import { supabaseClient } from "../../../functions/SupabaseSetup";
+import { Article } from "../../../../../types/Article";
+import ArticlesRenderer from "../../../../../components/ArticlesRenderer";
+import { supabaseClient } from "../../../../../functions/SupabaseSetup";
 
-export default function NewsroomPage() {
+const convertToTitleCase: (text: string|null) => string|null = (text: string|null) => {
+  if (!text) {
+    return null;
+  }
+  return text
+    .toLowerCase().split(" ").map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(" ");
+}
+
+export default function NewsroomArticlesByCategoryPage() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [renderedMessage, setMessage] = useState<string|undefined>(undefined)
+  const category = convertToTitleCase(
+    new URLSearchParams(document.location.search).get("category")
+  ) || "General"
 
   useEffect(() => {
     const supabaseTest = async () => {
-        const { data, error } = await supabaseClient.from("articles").select().order("created_at", {ascending: false}).limit(3)
+        const { data, error } = await supabaseClient.from("articles").select().order("created_at", {ascending: false}).eq("category", category);
         if (error) {
             setMessage("Something Went Wrong")
         } else {
@@ -22,7 +35,7 @@ export default function NewsroomPage() {
         setIsLoading(false)
     }
     supabaseTest()
-  }, [])
+  }, [category])
 
   return (
     <>
@@ -33,11 +46,8 @@ export default function NewsroomPage() {
             Nexus Newsroom<span className="text-teal-500">.</span>
           </h2>
           <p className="mt-2 text-lg/8 text-gray-600 dark:text-gray-400">
-            Stay Updated With the Latest Innovations and Stories From Nexus
+          Showing Articles With The Category : <span className="font-medium">{category}</span>
           </p>
-          <a href="/company/newsroom/articles" className="dark:text-gray-100 group tracking-wide hover:underline underline-offset-2">
-            View All Articles <span aria-hidden="true" className="group-hover:text-teal-500">&rarr;</span>
-          </a>
         </div>
         <ArticlesRenderer articles={articles} isLoading={isLoading} message={renderedMessage} />
       </div>

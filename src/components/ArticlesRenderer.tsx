@@ -28,7 +28,7 @@ export default function ArticlesRenderer({ articles, isLoading, message = "Sorry
                   }).replace(",", '')}
                 </time>
                 <a
-                  href={`/company/newsroom/`}
+                  href={`/company/newsroom/articles/viewByCategory?category=${article.category}`}
                   className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 dark:bg-gray-600 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   {article.category}
