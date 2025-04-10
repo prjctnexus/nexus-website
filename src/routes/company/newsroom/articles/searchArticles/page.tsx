@@ -5,28 +5,19 @@ import { useEffect, useState } from "react";
 import { Article } from "../../../../../types/Article";
 import ArticlesRenderer from "../../../../../components/ArticlesRenderer";
 import { supabaseClient } from "../../../../../functions/SupabaseSetup";
+import SearchComponent from "../../../../../components/SearchComponent";
 
-const convertToTitleCase: (text: string|null) => string|null = (text: string|null) => {
-  if (!text) {
-    return null;
-  }
-  return text.replace(/[^a-zA-Z\s]/g, '').trim()
-    .toLowerCase().split(/\s+/).map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(" ");
-}
-
-export default function NewsroomArticlesByCategoryPage() {
+export default function NewsroomArticlesSearchPage() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [renderedMessage, setMessage] = useState<string|undefined>(undefined)
-  const category = convertToTitleCase(
-    new URLSearchParams(document.location.search).get("category")
-  ) || "General"
+  const query = new URLSearchParams(document.location.search).get("query") || "General"
 
   useEffect(() => {
     const supabaseTest = async () => {
-        const { data, error } = await supabaseClient.from("articles").select().order("created_at", {ascending: false}).eq("category", category);
+        const { data, error } = await supabaseClient.from("articles").select().textSearch('search_vector', query, {
+          type: "websearch"
+        }).order("created_at", { ascending: false })
         if (error) {
             setMessage("Something Went Wrong")
         } else {
@@ -35,7 +26,7 @@ export default function NewsroomArticlesByCategoryPage() {
         setIsLoading(false)
     }
     supabaseTest()
-  }, [category])
+  }, [query])
 
   return (
     <>
@@ -46,8 +37,9 @@ export default function NewsroomArticlesByCategoryPage() {
             Nexus Newsroom<span className="text-teal-500">.</span>
           </h2>
           <p className="mt-2 text-lg/8 text-gray-600 dark:text-gray-400">
-          Showing Articles With The Category : <span className="font-medium">{category}</span>
+          Showing Articles For : <span className="font-medium">{query}</span>
           </p>
+          <SearchComponent />
         </div>
         <ArticlesRenderer articles={articles} isLoading={isLoading} message={renderedMessage} />
       </div>
