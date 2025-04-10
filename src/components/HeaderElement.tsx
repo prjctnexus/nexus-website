@@ -110,6 +110,9 @@ export default function HeaderElement() {
           <a href="/company/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
             Company
           </a>
+          <a href="/company/newsroom" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+            Newsroom
+          </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="/under_construction/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
@@ -164,6 +167,12 @@ export default function HeaderElement() {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-gray-300"
                 >
                   Company
+                </a>
+                <a
+                  href="/company/newsroom"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-gray-300"
+                >
+                  Newsroom
                 </a>
               </div>
               <div className="py-6">

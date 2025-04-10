@@ -10,6 +10,7 @@ import ContactPage from "./routes/contact/page";
 import CompanyPage from "./routes/company/page";
 import LeadershipPage from "./routes/company/leadership/page";
 import NexusForLearning from "./routes/products/learning/page";
+import NewsroomPage from "./routes/company/newsroom/page";
 
 createRoot(document.getElementById("APP_ROOT")!)
 .render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById("APP_ROOT")!)
             <Route path="/company/" element={<CompanyPage />} />
             <Route path="/company/leadership" element={<LeadershipPage />} />
             <Route path="/products/learning" element={<NexusForLearning />} />
+            <Route path="/company/newsroom" element={<NewsroomPage />} />
             <Route path="*" element={<PageNotFound />}/>
         </Routes>
         </BrowserRouter>
