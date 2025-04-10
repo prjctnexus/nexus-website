@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useState } from 'react'
 import {
   Dialog,
@@ -18,8 +16,6 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, EnvelopeIcon, CodeBracketIcon } from '@heroicons/react/20/solid'
-import Link from 'next/link'
-import Image from 'next/image'
 
 const products = [
   { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '/products/learning/', icon: ChartPieIcon },
@@ -47,15 +43,15 @@ export default function HeaderElement() {
     <header>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Project Nexus</span>
-            <Image
+            <img
               alt="Project Nexus Logo"
               src={isDarkMode ? "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/FaviconWhite.svg" : "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/Favicon.svg"}
               className={`${mobileMenuOpen ? "hidden" : ""}`}
               height={48} width={48}
             />
-          </Link>
+          </a>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -111,12 +107,12 @@ export default function HeaderElement() {
               </div>
             </PopoverPanel>
           </Popover>
-          <Link href="/company/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+          <a href="/company/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
             Company
-          </Link>
-          <Link href="/company/newsroom/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+          </a>
+          <a href="/company/newsroom" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
             Newsroom
-          </Link>
+          </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="/under_construction/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
@@ -128,14 +124,14 @@ export default function HeaderElement() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-[#121212] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Project Nexus</span>
-              <Image
+              <img
                 alt="Project Nexus Logo"
                 src={isDarkMode ? "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/FaviconWhite.svg" : "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/Favicon.svg"}
                 height={48} width={48}
               />
-            </Link>
+            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -166,18 +162,18 @@ export default function HeaderElement() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <Link
+                <a
                   href="/company/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-gray-300"
                 >
                   Company
-                </Link>
-                <Link
-                  href="/company/newsroom/"
+                </a>
+                <a
+                  href="/company/newsroom"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-gray-300"
                 >
                   Newsroom
-                </Link>
+                </a>
               </div>
               <div className="py-6">
                 <a
