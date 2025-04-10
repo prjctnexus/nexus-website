@@ -10,8 +10,8 @@ const convertToTitleCase: (text: string|null) => string|null = (text: string|nul
   if (!text) {
     return null;
   }
-  return text
-    .toLowerCase().split(" ").map(word => 
+  return text.trim()
+    .toLowerCase().split(/\s+/).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(" ");
 }
