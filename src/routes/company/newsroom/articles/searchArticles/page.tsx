@@ -15,9 +15,7 @@ export default function NewsroomArticlesSearchPage() {
 
   useEffect(() => {
     const supabaseTest = async () => {
-        const { data, error } = await supabaseClient.from("articles").select().textSearch('search_vector', query, {
-          type: "websearch"
-        }).order("created_at", { ascending: false })
+        const { data, error } = await supabaseClient.rpc('search_articles', {query: query})
         if (error) {
             setMessage("Something Went Wrong")
         } else {

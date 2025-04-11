@@ -7,14 +7,12 @@ SECURITY INVOKER
 SET search_path = public 
 AS $$
 BEGIN
-  NEW.search_vector := to_tsvector(
-    'english',
-    coalesce(NEW.category, '') || ' ' ||
-    coalesce(NEW.title, '') || ' ' ||
-    coalesce(NEW.description, '') || ' ' ||
-    coalesce(NEW.author_name, '') || ' ' ||
-    coalesce(NEW.author_role, '')
-  );
+  NEW.search_vector := 
+    setweight(to_tsvector('english', coalesce(NEW.title, '')), 'A') ||
+    setweight(to_tsvector('english', coalesce(NEW.description, '')), 'B') ||
+    setweight(to_tsvector('english', coalesce(NEW.category, '')), 'C') ||
+    setweight(to_tsvector('english', coalesce(NEW.author_name, '')), 'D') ||
+    setweight(to_tsvector('english', coalesce(NEW.author_role, '')), 'D');
   RETURN NEW;
 END;
 $$;
