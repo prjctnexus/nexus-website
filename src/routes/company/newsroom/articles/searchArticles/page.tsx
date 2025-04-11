@@ -1,19 +1,22 @@
 "use client";
 
-import HeaderElement from "../../../components/HeaderElement";
+import HeaderElement from "../../../../../components/HeaderElement";
 import { useEffect, useState } from "react";
-import { Article } from "../../../types/Article";
-import ArticlesRenderer from "../../../components/ArticlesRenderer";
-import { supabaseClient } from "../../../functions/SupabaseSetup";
+import { Article } from "../../../../../types/Article";
+import ArticlesRenderer from "../../../../../components/ArticlesRenderer";
+import { supabaseClient } from "../../../../../functions/SupabaseSetup";
+import SearchComponent from "../../../../../components/SearchComponent";
+import BetterURL from "../../../../../functions/BetterURLs";
 
-export default function NewsroomPage() {
+export default function NewsroomArticlesSearchPage() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [renderedMessage, setMessage] = useState<string|undefined>(undefined)
+  const query = BetterURL(new URLSearchParams(document.location.search).get("query")) || "General"
 
   useEffect(() => {
     const supabaseTest = async () => {
-        const { data, error } = await supabaseClient.from("articles").select().order("created_at", {ascending: false}).limit(3)
+        const { data, error } = await supabaseClient.rpc('search_articles', {query: query})
         if (error) {
             setMessage("Something Went Wrong")
         } else {
@@ -22,7 +25,7 @@ export default function NewsroomPage() {
         setIsLoading(false)
     }
     supabaseTest()
-  }, [])
+  }, [query])
 
   return (
     <>
@@ -33,11 +36,9 @@ export default function NewsroomPage() {
             Nexus Newsroom<span className="text-teal-500">.</span>
           </h2>
           <p className="mt-2 text-lg/8 text-gray-600 dark:text-gray-400">
-            Stay Updated With the Latest Innovations and Stories From Nexus
+          Showing Articles For : <span className="font-medium">{query}</span>
           </p>
-          <a href="/company/newsroom/articles" className="dark:text-gray-100 group tracking-wide hover:underline underline-offset-2">
-            View All Articles <span aria-hidden="true" className="group-hover:text-teal-500">&rarr;</span>
-          </a>
+          <SearchComponent />
         </div>
         <ArticlesRenderer articles={articles} isLoading={isLoading} message={renderedMessage} />
       </div>
