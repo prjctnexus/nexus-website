@@ -6,12 +6,13 @@ import { Article } from "../../../../../types/Article";
 import ArticlesRenderer from "../../../../../components/ArticlesRenderer";
 import { supabaseClient } from "../../../../../functions/SupabaseSetup";
 import SearchComponent from "../../../../../components/SearchComponent";
+import BetterURL from "../../../../../functions/BetterURLs";
 
 export default function NewsroomArticlesSearchPage() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [renderedMessage, setMessage] = useState<string|undefined>(undefined)
-  const query = new URLSearchParams(document.location.search).get("query") || "General"
+  const query = BetterURL(new URLSearchParams(document.location.search).get("query")) || "General"
 
   useEffect(() => {
     const supabaseTest = async () => {
