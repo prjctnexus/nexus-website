@@ -131,7 +131,7 @@ export default function NexusForLearning() {
             <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
           </div>
           <div className="relative max-lg:row-start-1">
-            <div className="absolute inset-px rounded-lg bg-sky-200 dark:bg-sky-950 max-lg:rounded-t-[2rem]"></div>
+            <div className="absolute inset-px rounded-lg bg-sky-200 dark:bg-blue-950 max-lg:rounded-t-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white max-lg:text-center">Performance</p>
@@ -151,7 +151,7 @@ export default function NexusForLearning() {
             <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem]"></div>
           </div>
           <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-            <div className="absolute inset-px rounded-lg bg-emerald-200 dark:bg-emerald-700"></div>
+            <div className="absolute inset-px rounded-lg bg-emerald-200 dark:bg-emerald-600"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
               <div className="px-8 pt-8 sm:px-10 sm:pt-10">
                 <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 dark:text-white max-lg:text-center">Security</p>
@@ -220,7 +220,7 @@ export default function NexusForLearning() {
           <div
             key={tier.id}
             className={classNames(
-              tier.featured ? 'relative bg-teal-800 dark:bg-teal-950 shadow-2xl' : 'bg-white/60 dark:bg-white/95 sm:mx-8 lg:mx-0',
+              tier.featured ? 'relative bg-gray-700 shadow-2xl' : 'bg-white/60 dark:bg-white/95 sm:mx-8 lg:mx-0',
               tier.featured
                 ? ''
                 : tierIdx === 0
