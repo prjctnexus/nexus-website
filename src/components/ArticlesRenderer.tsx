@@ -1,4 +1,5 @@
 import { Article } from "../types/Article";
+import LoadingElement from "./LoadingElement";
 
 interface ArticlesRendererProps {
   articles: Article[];
@@ -10,9 +11,7 @@ export default function ArticlesRenderer({ articles, isLoading, message = "Sorry
   return (
     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 dark:border-gray-800 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
       {isLoading ? (
-        <div className="col-span-full flex items-center justify-center">
-          <div className="inline-block size-12 border-4 border-zinc-500 border-b-transparent rounded-full animate-spin"></div>
-        </div>
+        <LoadingElement />
       ) : articles.length === 0 ? (
         <p className="text-center col-span-full text-gray-700 dark:text-gray-300">
           {message}

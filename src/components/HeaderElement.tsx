@@ -16,6 +16,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, EnvelopeIcon, CodeBracketIcon } from '@heroicons/react/20/solid'
+import { supabaseClient } from '../functions/SupabaseSetup'
 
 const products = [
   { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '/products/learning/', icon: ChartPieIcon },
@@ -28,15 +29,20 @@ const callsToAction = [
 export default function HeaderElement() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [isDarkMode, setTheme] = useState<boolean>(true);
+  const [isUserSignedIn, setUserState] = useState<boolean>(false);
 
   useEffect(() => {
+    const getUserState: () => Promise<boolean> = async () => {
+      const { data: { user } } = await supabaseClient.auth.getUser()
+      return user !== null;
+    }
     const getColorState = (fn: { (state: boolean): void; (arg0: boolean): void }) => {
       if (!window.matchMedia) { return; }
       const query = window.matchMedia('(prefers-color-scheme: dark)');
       fn(query.matches)
       query.addEventListener('change', (event) => fn(event.matches));
     }
-    getColorState((state) => setTheme(state))
+    getColorState((state) => setTheme(state)) ; getUserState().then((data) => setUserState(data))
   }, [])
 
   return (
@@ -115,8 +121,8 @@ export default function HeaderElement() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/under_construction/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
-            Log In <span aria-hidden="true">&rarr;</span>
+          <a href={isUserSignedIn ? "/under_construction/" : "/account/login/"} className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+            {isUserSignedIn ? "Console" : "Log In"} <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -177,10 +183,10 @@ export default function HeaderElement() {
               </div>
               <div className="py-6">
                 <a
-                  href="/under_construction/"
+                  href={isUserSignedIn ? "/under_construction/" : "/account/login/"}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-gray-300"
                 >
-                  Log In
+                  {isUserSignedIn ? "Console" : "Log In"}
                 </a>
               </div>
             </div>

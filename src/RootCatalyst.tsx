@@ -13,6 +13,7 @@ import NexusForLearning from "./routes/products/learning/page";
 import NewsroomPage from "./routes/company/newsroom/page";
 import NewsroomAllArticlesPage from "./routes/company/newsroom/articles/page";
 import NewsroomArticlesSearchPage from "./routes/company/newsroom/articles/searchArticles/page";
+import LoginPage from "./routes/account/login/page";
 
 createRoot(document.getElementById("APP_ROOT")!)
 .render(
@@ -26,6 +27,7 @@ createRoot(document.getElementById("APP_ROOT")!)
             <Route path="/company/leadership" element={<LeadershipPage />} />
             <Route path="/products/learning" element={<NexusForLearning />} />
             <Route path="/company/newsroom" element={<NewsroomPage />} />
+            <Route path="/account/login" element={<LoginPage />} />
             <Route path="/company/newsroom/articles" element={<NewsroomAllArticlesPage />} />
             <Route path="/company/newsroom/articles/searchArticles" element={<NewsroomArticlesSearchPage />} />
             <Route path="*" element={<PageNotFound />}/>
