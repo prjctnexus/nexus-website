@@ -22,7 +22,7 @@ export default function LoginPage() {
             window.location.href = "/account/login"
         } else {
             alert("User Signed In Successfully")
-            window.location.href = "/under_construction/";
+            window.location.href = "/account/";
         }
     }
 

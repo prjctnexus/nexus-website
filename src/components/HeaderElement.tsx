@@ -121,7 +121,7 @@ export default function HeaderElement() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href={isUserSignedIn ? "/under_construction/" : "/account/login/"} className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+          <a href={isUserSignedIn ? "/account/" : "/account/login/"} className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
             {isUserSignedIn ? "Console" : "Log In"} <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -183,7 +183,7 @@ export default function HeaderElement() {
               </div>
               <div className="py-6">
                 <a
-                  href={isUserSignedIn ? "/under_construction/" : "/account/login/"}
+                  href={isUserSignedIn ? "/account/" : "/account/login/"}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:hover:bg-gray-900 dark:text-gray-300"
                 >
                   {isUserSignedIn ? "Console" : "Log In"}
