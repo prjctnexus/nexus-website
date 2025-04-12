@@ -102,7 +102,7 @@ export default function LoginPage() {
 
                     <p className="mt-10 text-center text-sm/6 text-gray-500">
                         Don't Have an Account Yet ?{' '}
-                        <a href="/under_construction/" className="font-semibold text-teal-600 hover:text-teal-500 dark:text-teal-500 dark:hover:text-teal-600">
+                        <a href="/account/signup/" className="font-semibold text-teal-600 hover:text-teal-500 dark:text-teal-500 dark:hover:text-teal-600">
                             Sign Up Now
                         </a>
                     </p>

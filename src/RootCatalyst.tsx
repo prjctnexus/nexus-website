@@ -14,6 +14,7 @@ import NewsroomPage from "./routes/company/newsroom/page";
 import NewsroomAllArticlesPage from "./routes/company/newsroom/articles/page";
 import NewsroomArticlesSearchPage from "./routes/company/newsroom/articles/searchArticles/page";
 import LoginPage from "./routes/account/login/page";
+import SignUpPage from "./routes/account/signup/page";
 
 createRoot(document.getElementById("APP_ROOT")!)
 .render(
@@ -24,6 +25,7 @@ createRoot(document.getElementById("APP_ROOT")!)
             <Route path="/under_construction/" element={<PageUnderConstruction />} />
             <Route path="/contact/" element={<ContactPage />} />
             <Route path="/company/" element={<CompanyPage />} />
+            <Route path="/account/signup" element={<SignUpPage />} />
             <Route path="/company/leadership" element={<LeadershipPage />} />
             <Route path="/products/learning" element={<NexusForLearning />} />
             <Route path="/company/newsroom" element={<NewsroomPage />} />
