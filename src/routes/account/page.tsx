@@ -1,14 +1,18 @@
+import Swipe from "react-easy-swipe";
 import { useEffect, useState } from "react";
-import CustomHeader from "./helpers/CustomHeader";
-import { User } from "../../types/User";
 import { supabaseClient } from "../../functions/SupabaseSetup";
+
 import {
     ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon,
     ChevronUpIcon, CreditCardIcon, HomeIcon, IdentificationIcon,
     LockClosedIcon, ServerStackIcon, UserCircleIcon, UserGroupIcon
 } from "@heroicons/react/24/outline";
-import Swipe from "react-easy-swipe";
+
+import CustomHeader from "./helpers/CustomHeader";
+import { User } from "../../types/User";
 import RenderBox from "./helpers/RenderBox";
+
+import AccountHome from "./account_sections/AccountHome";
 
 const links = [
     { id: 1, name: "Home", icon: UserCircleIcon },
@@ -99,7 +103,9 @@ export default function AccountPage() {
                     <h2 className="font-tracking-wide">Go Back Home</h2>
                 </li>
             </ul>
-            <RenderBox visible={isNavOpen}><></></RenderBox>
+            <RenderBox visible={isNavOpen}>{
+                activeSection === "Home" ? <AccountHome ActiveUser={userData} RenderedSectionHandler={setActiveSection}/> : <></>
+            }</RenderBox>
         </>
     )
 }
