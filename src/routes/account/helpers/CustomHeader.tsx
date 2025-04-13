@@ -22,7 +22,7 @@ export default function CustomHeader({ user_name } : CustomHeaderProps) {
         getColorState((state) => setTheme(state)); getUserState()
     }, [])
     return (
-        <header className="flex items-center justify-between p-6 lg:px-8 bg-transparent">
+        <header className="flex items-center justify-between p-6 lg:px-8 bg-transparent py-3 lg:py-6">
             <div className="flex lg:flex-1">
                 <a href="/" className="-m-1.5 p-1.5 flex items-center gap-3.5" title="Go Back Home">
                     <span className="sr-only">Project Nexus</span>
