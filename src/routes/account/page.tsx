@@ -68,11 +68,11 @@ export default function AccountPage() {
                     {isNavOpen ? <ChevronUpIcon className="size-5" /> : <ChevronDownIcon className="size-5" />}
                 </section>
             </Swipe>
-            <nav className={(isNavOpen ? "block py-3 border-b-2 border-b-zinc-100" : "hidden") + " lg:hidden"}>
+            <nav className={(isNavOpen ? "pointer-coarse:block py-6 border-b-2 border-b-zinc-100 dark:border-b-zinc-600" : "hidden") + " lg:hidden hidden"}>
                 <ul className="flex flex-col gap-2">
                     {links.map((item) => (
                         <li className={
-                            `flex items-center gap-4 pl-5 ${item.name === activeSection ? "bg-slate-50 dark:text-white dark:bg-zinc-800 py-1 rounded-r-full" : "text-gray-500"}`
+                            `flex items-center gap-4 pl-5 ${item.name === activeSection ? "bg-slate-50 dark:text-white dark:bg-zinc-800 py-1 rounded-r-full mr-0.5" : "text-gray-500"}`
                         } key={item.id} onClick={() => { setActiveSection(item.name); setNavOpen(false) }}>
                             <item.icon className="size-7" />
                             <h2 className="tracking-wide">{item.name}</h2>
@@ -91,7 +91,7 @@ export default function AccountPage() {
                         <h2 className="tracking-wide">{item.name}</h2>
                     </li>
                 ))}
-                <div className="w-full border border-zinc-300 dark:border-zinc-700 my-2"></div>
+                <div className="w-full border border-zinc-300 dark:border-zinc-600 my-2"></div>
                 <li className="flex items-center gap-4 ml-7 dark:text-white cursor-pointer" title="Go Back To Home Page" onClick={() => {
                     window.location.href = "/";
                 }}>
@@ -99,7 +99,7 @@ export default function AccountPage() {
                     <h2 className="font-tracking-wide">Go Back Home</h2>
                 </li>
             </ul>
-            <RenderBox children={<></>} visible={isNavOpen} />
+            <RenderBox visible={isNavOpen}><></></RenderBox>
         </>
     )
 }

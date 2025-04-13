@@ -40,7 +40,7 @@ export default function CustomHeader({ user_name } : CustomHeaderProps) {
             </div>
             <div className="h-[48px] flex items-center">
                 {user_name == undefined ? 
-                    <LoadingElement size={10}/>
+                    <LoadingElement />
                 :
                     <img src={`https://api.dicebear.com/9.x/initials/svg?seed=${user_name}`} alt="Profile Avatar" className="size-10 rounded-full" />
                 }
