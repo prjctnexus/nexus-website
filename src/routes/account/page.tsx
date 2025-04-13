@@ -12,8 +12,6 @@ import CustomHeader from "./helpers/CustomHeader";
 import { User } from "../../types/User";
 import RenderBox from "./helpers/RenderBox";
 
-import AccountHome from "./account_sections/AccountHome";
-
 const links = [
     { id: 1, name: "Home", icon: UserCircleIcon },
     { id: 2, name: "Personal Information", icon: IdentificationIcon },
@@ -103,9 +101,7 @@ export default function AccountPage() {
                     <h2 className="font-tracking-wide">Go Back Home</h2>
                 </li>
             </ul>
-            <RenderBox visible={isNavOpen}>{
-                activeSection === "Home" ? <AccountHome ActiveUser={userData} RenderedSectionHandler={setActiveSection}/> : <></>
-            }</RenderBox>
+            <RenderBox visible={isNavOpen}><></></RenderBox>
         </>
     )
 }
