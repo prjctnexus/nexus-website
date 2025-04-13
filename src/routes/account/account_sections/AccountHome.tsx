@@ -33,13 +33,15 @@ export default function AccountHome({ ActiveUser, RenderedSectionHandler }: Acco
                 {ActiveUser == null ? (
                     <LoadingElement />
                 ) : (
-                    <>
-                        <img
-                            src={`https://api.dicebear.com/9.x/initials/svg?seed=${ActiveUser.full_name}`} alt="User Avatar"
-                            width={96} height={96} className="rounded-full"
-                        />
+                    <div className="my-12 md:my-24">
+                        <div className="w-full flex items-center justify-center">
+                            <img
+                                src={`https://api.dicebear.com/9.x/initials/svg?seed=${ActiveUser.full_name}`} alt="User Avatar"
+                                width={96} height={96} className="rounded-full"
+                            />
+                        </div>
                         <h1 className="text-[28px] dark:text-white open-sans-font text-center py-5">Welcome, {ActiveUser.full_name}</h1>
-                        <ul className="grid gap-8 min-[668px]:grid-cols-2 max-w-4xl px-4">
+                        <ul className="grid gap-8 min-[668px]:grid-cols-2 max-w-4xl px-4 pt-5">
                             {pageData.map((element) => (
                                 <li key={element.id} className="border-2 dark:border-zinc-600 py-4 rounded-xl border-zinc-300">
                                     <div className="flex items-center justify-between px-4 gap-4">
@@ -60,7 +62,7 @@ export default function AccountHome({ ActiveUser, RenderedSectionHandler }: Acco
                                 </li>
                             ))}
                         </ul>
-                    </>
+                    </div>
                 )}
             </div>
         </>
