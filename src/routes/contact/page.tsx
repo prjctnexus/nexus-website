@@ -28,7 +28,7 @@ export default function ContactPage() {
                 type="text"
                 placeholder="Enter The Subject"
                 autoComplete="none"
-                className="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 dark:text-white dark:bg-white/13 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                className="min-w-0 border border-gray-400 dark:border-gray-600 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-800 dark:placeholder:text-gray-400 dark:text-white dark:bg-white/13 focus:outline-2 focus:-outline-offset-2 focus:outline-teal-500 sm:text-sm/6"
               />
               <button
                 className="flex-none rounded-md bg-teal-500 dark:bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-teal-400 dark:hover:bg-teal-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 dark:focus-visible:outline-teal-600"

@@ -48,7 +48,7 @@ export default function SignUpPage() {
                     window.location.href = "/contact/"
                 } else {
                     alert("User Created Successfully.")
-                    window.location.href = "/account/"
+                    window.location.href = "/under_construction/"
                 }
             }
         }

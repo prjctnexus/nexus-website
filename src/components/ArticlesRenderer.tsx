@@ -40,7 +40,7 @@ export default function ArticlesRenderer({ articles, isLoading, message = "Sorry
                     {article.title}
                   </a>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-300">{article.description}</p>
+                <p className="mt-5  text-sm/6 text-gray-600 dark:text-gray-300">{article.description}</p>
               </div>
               <div className="relative mt-8 flex items-center gap-x-4">
                 <img
