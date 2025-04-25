@@ -1,3 +1,5 @@
+"use client";
+
 import {NewspaperIcon, MagnifyingGlassIcon} from "@heroicons/react/20/solid";
 import { useEffect } from "react";
 import BetterURL from "../functions/BetterURLs";

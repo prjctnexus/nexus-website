@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react'
 import {
   Dialog,
@@ -17,6 +19,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, EnvelopeIcon, CodeBracketIcon } from '@heroicons/react/20/solid'
 import { supabaseClient } from '../functions/SupabaseSetup'
+import Image from 'next/image';
+import Link from 'next/link';
 
 const products = [
   { name: 'Nexus for Learning', description: 'Learning Solutions For The Future', href: '/products/learning/', icon: ChartPieIcon },
@@ -49,15 +53,15 @@ export default function HeaderElement() {
     <header>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Project Nexus</span>
-            <img
+            <Image
               alt="Project Nexus Logo"
               src={isDarkMode ? "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/FaviconWhite.svg" : "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/Favicon.svg"}
               className={`${mobileMenuOpen ? "hidden" : ""}`}
               height={48} width={48}
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -113,12 +117,12 @@ export default function HeaderElement() {
               </div>
             </PopoverPanel>
           </Popover>
-          <a href="/company/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+          <Link href="/company/" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
             Company
-          </a>
-          <a href="/company/newsroom" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
+          </Link>
+          <Link href="/company/newsroom" className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
             Newsroom
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href={isUserSignedIn ? "/under_construction/" : "/account/login/"} className="text-sm/6 font-semibold text-gray-900 dark:text-gray-200">
@@ -130,14 +134,14 @@ export default function HeaderElement() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-[#121212] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Project Nexus</span>
-              <img
+              <Image
                 alt="Project Nexus Logo"
                 src={isDarkMode ? "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/FaviconWhite.svg" : "https://raw.githubusercontent.com/prjctnexus/nexus-website/a731ca53b7651d32406e77649a732abc06dbdf1f/public/Favicon.svg"}
                 height={48} width={48}
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}

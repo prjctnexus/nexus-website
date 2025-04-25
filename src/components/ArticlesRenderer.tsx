@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Article } from "../types/Article";
 import LoadingElement from "./LoadingElement";
 
@@ -43,7 +44,7 @@ export default function ArticlesRenderer({ articles, isLoading, message = "Sorry
                 <p className="mt-5  text-sm/6 text-gray-600 dark:text-gray-300">{article.description}</p>
               </div>
               <div className="relative mt-8 flex items-center gap-x-4">
-                <img
+                <Image
                   alt="Author Image"
                   src={article.author_image_url}
                   className="rounded-full bg-gray-50"
